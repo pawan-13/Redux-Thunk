@@ -1,0 +1,31 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+h2{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: red;
+  margin: 2rem 0rem;
+}
+
+button{
+  width: 10%;
+  margin: auto;
+  padding: 0.6rem 0.9rem;
+  background-color: #000;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  display: block;
+  border-radius: 6px;
+}
+
+button:hover{
+  background-color: #0ad8f4;
+  font-weight: 700;
+}
