@@ -10,7 +10,7 @@ export const fetchProduct = createAsyncThunk('fetchProduct', async(_,{rejectWith
         console.log('error', error);
         return rejectWithValue(error);
     }
-})
+});
  const product = createSlice({
     name : 'product',
     initialState : {
@@ -19,17 +19,17 @@ export const fetchProduct = createAsyncThunk('fetchProduct', async(_,{rejectWith
         isError : false,
     },
     extraReducers : (builder) => {
-        builder.addCase(fetchProduct.pending((state)=>{
+        builder.addCase(fetchProduct.pending,(state)=>{
             state.isLoading = true;
-        }));
-        builder.addCase(fetchProduct.fulfilled((state,action)=>{
+        });
+        builder.addCase(fetchProduct.fulfilled,(state,action)=>{
             state.isLoading = false;
             state.data = action.payload;
-        }));
-        builder.addCase(fetchProduct.rejected((state,action)=>{
+        });
+        builder.addCase(fetchProduct.rejected,(state,action)=>{
             console.log('error',action.payload);
             state.isError = true;            
-        }))
+        });
     }
 });
 

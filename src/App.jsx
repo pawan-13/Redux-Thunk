@@ -10,14 +10,17 @@ const App = () => {
   if(state.isLoading){
     return <h1>Loading......</h1>
   }
+
 return(
   <>  
      <div>
         <h2>Fetch the Data Using Redux Thunk</h2>
         <button onClick={()=>dispatch(fetchProduct())}>Fetch Data</button>
         {
-          state.data && state.data.map((products)=>(
-            <li key={products}>{products}</li>
+          state.data && state.data.map((product, id) => (
+            <div key={id}>
+              <h3 style={{textAlign:'center',margin:'1rem'}}>{product.title}</h3>                           
+            </div>
           ))
         }
      </div>
